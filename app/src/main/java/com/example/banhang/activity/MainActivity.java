@@ -111,10 +111,15 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(dienthoai);
                         break;
                     case 2:
-                        Intent laptop = new Intent(getApplicationContext(), LaptopActivity.class);
+                        Intent laptop = new Intent(getApplicationContext(), DienThoaiActivity.class);
                         laptop.putExtra("loai", 2);
                         startActivity(laptop);
                         break;
+//                    case 3:
+//                        Intent liehe = new Intent(getApplicationContext(), DienThoaiActivity.class);
+//                        liehe.putExtra("loai", 3);
+//                        startActivity(liehe);
+//                        break;
                     case 5:
                         Intent donhang = new Intent(getApplicationContext(), XemDonActivity.class);
                         startActivity(donhang);
@@ -227,6 +232,10 @@ public class MainActivity extends AppCompatActivity {
         // khoi tao List
         mangloaisp = new ArrayList<>();
         mangSpMoi = new ArrayList<>();
+        if (Paper.book().read("giohang") != null) {
+            Utils.manggiohang = Paper.book().read("giohang");
+        }
+
         if (Utils.manggiohang == null) {
             Utils.manggiohang = new ArrayList<>();
         }else {

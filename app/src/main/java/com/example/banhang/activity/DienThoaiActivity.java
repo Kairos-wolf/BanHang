@@ -1,6 +1,7 @@
 package com.example.banhang.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -137,6 +138,13 @@ public class DienThoaiActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        ActionBar a = getSupportActionBar();
+        if (loai == 1) {
+            a.setTitle("Điện thoại");
+        } else if (loai == 2) {
+            a.setTitle("Laptop");
+        }
     }
 
     private void AnhXa() {

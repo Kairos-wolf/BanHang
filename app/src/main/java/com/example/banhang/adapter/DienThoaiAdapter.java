@@ -54,7 +54,7 @@ public class DienThoaiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             SanPhamMoi sanPham = array.get(position);
             myViewHolder.tensp.setText(sanPham.getTensp().trim());
             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-            myViewHolder.giasp.setText("Giá: "+((sanPham.getGiasp()))+"đ");
+            myViewHolder.giasp.setText("Giá: "+decimalFormat.format(Double.parseDouble(sanPham.getGiasp()))+"đ");
             myViewHolder.mota.setText(sanPham.getMota());
             Glide.with(context).load(sanPham.getHinhanh()).into(myViewHolder.hinhanh);
 
